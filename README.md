@@ -38,8 +38,8 @@ A list of interesting transformation I hope to explore and perhaps implement:
 * Clone the Shadow repo `git clone --config core.autocrlf=false https://github.com/nimrodpar/Shadow.git`
 
 **Build with Ninja (preferred):**
-* Open a `cmd.exe` and run `build.bat`. You can rebuild under the same shell by invoking `ninja -j8 clang`
-* To (re)build in a new shell, open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja -j8 clang`
+* Open a `cmd.exe` and run `build.bat`. You can rebuild under the same shell by invoking `ninja clang`
+* To (re)build in a new shell, open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja clang`
 
 **Build with CMake (not recommended):**
 * Open a “Developer Command Prompt for VS 2019”
