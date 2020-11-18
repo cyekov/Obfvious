@@ -13,7 +13,7 @@ Shadow was incepted as part of my research on executable similarity and specific
 
 ## Status & Contributing
 
-Shadow is in a very initial state, and only allows for basic string obfuscation through RORing with a random value. Decoding is done JIT-style be allocating a string for each usage and decoding the obfuscated string to it (and then reading it).
+Shadow is in a very initial state, and only allows for basic string obfuscation through RORing with a random value. Decoding is done JIT-style by allocating a string for each usage and decoding the obfuscated string to it (and then reading it).
 
 Although being a trivial transformation, I have yet to find a decent open source tool for doing this. Furthermore, the string transformation seems to be enough to avoid static detection of malware (TODO: cite).
 
