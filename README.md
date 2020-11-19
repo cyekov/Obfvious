@@ -40,21 +40,12 @@ The code for Shadow was added under the `CodeGen` module and is located in files
         * `choco install cmake git python3` 
 * Clone the Shadow repo `git clone --config core.autocrlf=false https://github.com/nimrodpar/Shadow.git`
 
-**Build with Ninja (preferred):**
+**Build:**
 * Open a `cmd.exe` and run `build.bat`. You can rebuild under the same shell by invoking `ninja clang`
 * To (re)build in a new shell, open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja clang`
 
-**~~Build with CMake~~ (not recommended):**
-* Open a “Developer Command Prompt for VS 2019”
-* Configure the build:
-```
-mkdir build && cd build
-cmake -G "Visual Studio 16 2019" -DLLVM_ENABLE_PROJECTS=clang -A x64 -Thost=x64 -DLLVM_TARGETS_TO_BUILD="AArch64" ..\llvm   
-```
-* To (re)Build:
-```
-cmake --build
-```
+**Test:**
+* Open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja check-llvm`
 
 ## Resources
 * [Nice CLang overview](https://llvm.org/devmtg/2017-06/2-Hal-Finkel-LLVM-2017.pdf)
