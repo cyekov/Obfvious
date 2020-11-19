@@ -6,6 +6,8 @@ Shadow is a LLVM & CLang based compiler that allows for Windows binaries obfusca
 
 Shadow was incepted as part of my research on executable similarity and specifically malware similarity (TODO: cite). I wanted to examin how reliant are static AV engines (exposed through VirusTotal (TM)) on meta data such as hard-coded strings and debug info.
 
+It can also be of use to software authors that want to protect their code from RE.
+
 ## Notes
 * As opposed to many tools build upon LLVM, Shadow is *not* implemented as a pass, but instead coded as an integral part of CLang. To the best of my knowledge, you can’t at this point create an out-of-source LLVM pass on windows.
 * You cannot cross compile (you can’t build a Windows clang on a non-Win machine)
