@@ -66,6 +66,7 @@ add_clang_library(clangCodeGen
   CGStmtOpenMP.cpp
   CGVTT.cpp
   CGVTables.cpp
+  ShadowObfuscator.cpp
   CodeGenABITypes.cpp
   CodeGenAction.cpp
   CodeGenFunction.cpp

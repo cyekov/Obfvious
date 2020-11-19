@@ -26,6 +26,9 @@ A list of interesting transformation I hope to explore and perhaps implement:
 
 **You are very much encouraged to suggest and implement any and all features through issues / pull requests**
 
+The code for Shadow was added under the `CodeGen` module and is located in files
+`clang/lib/CodeGen/ShadowObfuscator.{h, cpp}`
+
 ## Compiling on Win 10
 
 **Prerequisites:**
