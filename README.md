@@ -2,6 +2,8 @@
 
 Shadow is a LLVM & CLang based compiler that allows for Windows binaries obfuscation.
 
+Shadow is currently implemented as an integral part of CLang and is invoked automatically as part of the compilation with `clang.exe`.
+
 ## Why?
 
 Shadow was incepted as part of my research on executable similarity and specifically malware similarity (TODO: cite). I wanted to examin how reliant are static AV engines (exposed through VirusTotal (TM)) on meta data such as hard-coded strings and debug info.
