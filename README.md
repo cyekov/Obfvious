@@ -33,7 +33,7 @@ The code for Shadow was added under the `CodeGen` module and is located in files
 
 **Prerequisites:**
 * Install Build Tools for VS from [here](https://visualstudio.microsoft.com/downloads/#) (check the “C++ build tools” box and under the “Installation details” may want to also check ‘C++ ATL’ box).
-    * [Unchecked] You can install it via command line by downloading https://aka.ms/vs/16/release/vs_buildtools.exe and running `vs_buildtools.exe --quiet --wait --norestart --nocache  --add 	Microsoft.VisualStudio.Workload.VCTools --add Microsoft.VisualStudio.Component.VC.ATLMFC --includeRecommended`
+    * You can install it via command line by downloading https://aka.ms/vs/16/release/vs_buildtools.exe and running `vs_buildtools.exe --quiet --wait --norestart --nocache  --add 	Microsoft.VisualStudio.Workload.VCTools --add Microsoft.VisualStudio.Component.VC.ATLMFC --includeRecommended`
 * Install Git, CMake and Python3, make sure they are added to path.
     * [Unchecked] You can install deps using Chocolatey:
         * Install choco from powershell: `iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))`
@@ -44,7 +44,7 @@ The code for Shadow was added under the `CodeGen` module and is located in files
 * Open a `cmd.exe` and run `build.bat`. You can rebuild under the same shell by invoking `ninja clang`
 * To (re)build in a new shell, open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja clang`
 
-**Build with CMake (not recommended):**
+**~~Build with CMake~~ (not recommended):**
 * Open a “Developer Command Prompt for VS 2019”
 * Configure the build:
 ```
