@@ -49,7 +49,7 @@ The code for Shadow was added under the `CodeGen` module and is located in files
 * To (re)build in a new shell, open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja clang`
 
 **Test:**
-* Open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja check-llvm`
+* Open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja check-llvm clang-test`
 
 ## Resources
 * [Nice CLang overview](https://llvm.org/devmtg/2017-06/2-Hal-Finkel-LLVM-2017.pdf)
