@@ -54,3 +54,7 @@ The code for Shadow was added under the `CodeGen` module and is located in files
 ## Resources
 * [Nice CLang overview](https://llvm.org/devmtg/2017-06/2-Hal-Finkel-LLVM-2017.pdf)
 * [Writing an LLVM obfuscating pass](https://medium.com/@polarply/build-your-first-llvm-obfuscator-80d16583392b)
+* https://github.com/tsarpaul/llvm-string-obfuscator/blob/master/StringObfuscator/StringObfuscator.cpp
+* https://llvm.org/docs/ProgrammersManual.html
+* https://llvm.org/docs/LangRef.html
+* https://llvm.org/docs/GetElementPtr.html
