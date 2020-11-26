@@ -14,6 +14,8 @@ It can also be of use to software authors that want to protect their code from R
 * As opposed to many tools build upon LLVM, Shadow is *not* implemented as a pass, but instead coded as an integral part of CLang. To the best of my knowledge, you can’t at this point create an out-of-source LLVM pass on windows.
 * You cannot cross compile (you can’t build a Windows clang on a non-Win machine)
 
+## Shadow on \*nix systems
+There is nothing preventing Shadow from working on Linux and Mac distributions. It shoudl work just fine, I just didn't get around to testing it. 
 
 ## Status & Contributing
 
@@ -49,6 +51,7 @@ The code for Shadow was added under the `CodeGen` module and is located in files
 * To (re)build in a new shell, open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja clang`
 
 **Test:**
+* Testing requires grep and sed, you can install them with chocolatey `choco install grep sed`
 * Open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja check-llvm clang-test`
 
 ## Resources
