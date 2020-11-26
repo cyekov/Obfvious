@@ -55,9 +55,9 @@ The code for Shadow was added under the `CodeGen` module and is located in files
 * Open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja check-llvm clang-test`
 
 ## Resources
+* [LLVM for Grad Students](http://www.cs.cornell.edu/~asampson/blog/llvm.html)
 * [Nice CLang overview](https://llvm.org/devmtg/2017-06/2-Hal-Finkel-LLVM-2017.pdf)
-* [Writing an LLVM obfuscating pass](https://medium.com/@polarply/build-your-first-llvm-obfuscator-80d16583392b)
-* https://github.com/tsarpaul/llvm-string-obfuscator/blob/master/StringObfuscator/StringObfuscator.cpp
+* [Writing an LLVM obfuscating pass blog post](https://medium.com/@polarply/build-your-first-llvm-obfuscator-80d16583392b) and [code](https://github.com/tsarpaul/llvm-string-obfuscator/blob/master/StringObfuscator/StringObfuscator.cpp)
 * https://llvm.org/docs/ProgrammersManual.html
 * https://llvm.org/docs/LangRef.html
 * https://llvm.org/docs/GetElementPtr.html
