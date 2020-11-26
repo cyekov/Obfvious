@@ -12,9 +12,9 @@
 #define SHADOW_OBFUSCATOR_H
 
 #include "llvm/IR/Module.h"
+#include "llvm/IR/Constant.h"
 #include "llvm/IR/GlobalVariable.h"
 #include "llvm/IR/LLVMContext.h"
-
 
 namespace clang {
 
@@ -26,7 +26,8 @@ private:
 
     llvm::Module &TheModule;
 
-    void DoGlobalString(llvm::GlobalVariable &Glob, llvm::LLVMContext &Ctx);
+    void DoGlobalString(llvm::GlobalVariable &Glob);
+    llvm::Constant * EncodeString(llvm::StringRef StrVal);
 
 public:
     ShadowObfuscator(llvm::Module &M) : TheModule(M) {}
