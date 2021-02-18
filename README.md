@@ -10,6 +10,25 @@ Shadow was incepted during my [research on executable similarity](https://nimrod
 
 I open sourced Shadow as a tool for other researchers interested in binary and malware analysis.
 
+## Compiling on Win 10
+
+**Prerequisites:**
+* Install Build Tools for VS from [here](https://visualstudio.microsoft.com/downloads/#) (check the “C++ build tools” box and under the “Installation details” may want to also check ‘C++ ATL’ box).
+    * You can install it via command line by downloading https://aka.ms/vs/16/release/vs_buildtools.exe and running `vs_buildtools.exe --quiet --wait --norestart --nocache  --add 	Microsoft.VisualStudio.Workload.VCTools --add Microsoft.VisualStudio.Component.VC.ATLMFC --includeRecommended`
+* Install Git, CMake and Python3, make sure they are added to path.
+    * [Unchecked] You can install deps using Chocolatey:
+        * Install choco from powershell: `iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))`
+        * `choco install cmake git python3 --installargs '"ADD_CMAKE_TO_PATH=System"'` (You may still need to add them it manually to PATH)
+* Clone the Shadow repo `git clone --config core.autocrlf=false https://github.com/nimrodpar/Shadow.git`
+
+**Build:**
+* Open a `cmd.exe` and run `build.bat`. You can rebuild under the same shell by invoking `ninja clang`
+* To (re)build in a new shell, open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja clang`
+
+**Test:**
+* Testing requires grep and sed, you can install them with chocolatey `choco install grep sed`
+* Open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja check-llvm clang-test`
+
 ## Notes
 * As opposed to many tools build upon LLVM, Shadow is *not* implemented as a pass, but instead coded as an integral part of CLang. To the best of my knowledge, you can’t at this point create an out-of-source LLVM pass on windows.
 * You cannot cross compile (you can’t build a Windows clang on a non-Win machine)
@@ -34,25 +53,6 @@ A list of interesting transformation I hope to explore and perhaps implement:
 
 The code for Shadow was added under the `CodeGen` module and is located in files
 `clang/lib/CodeGen/ShadowObfuscator.{h, cpp}`
-
-## Compiling on Win 10
-
-**Prerequisites:**
-* Install Build Tools for VS from [here](https://visualstudio.microsoft.com/downloads/#) (check the “C++ build tools” box and under the “Installation details” may want to also check ‘C++ ATL’ box).
-    * You can install it via command line by downloading https://aka.ms/vs/16/release/vs_buildtools.exe and running `vs_buildtools.exe --quiet --wait --norestart --nocache  --add 	Microsoft.VisualStudio.Workload.VCTools --add Microsoft.VisualStudio.Component.VC.ATLMFC --includeRecommended`
-* Install Git, CMake and Python3, make sure they are added to path.
-    * [Unchecked] You can install deps using Chocolatey:
-        * Install choco from powershell: `iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))`
-        * `choco install cmake git python3` 
-* Clone the Shadow repo `git clone --config core.autocrlf=false https://github.com/nimrodpar/Shadow.git`
-
-**Build:**
-* Open a `cmd.exe` and run `build.bat`. You can rebuild under the same shell by invoking `ninja clang`
-* To (re)build in a new shell, open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja clang`
-
-**Test:**
-* Testing requires grep and sed, you can install them with chocolatey `choco install grep sed`
-* Open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja check-llvm clang-test`
 
 ## Resources
 * [LLVM for Grad Students](http://www.cs.cornell.edu/~asampson/blog/llvm.html)
