@@ -33,13 +33,6 @@ I open sourced Obfvious as a tool for other researchers interested in binary and
 * Testing requires grep and sed, you can install them with chocolatey `choco install grep sed`
 * Open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja check-llvm clang-test`
 
-## Notes
-* As opposed to many tools build upon LLVM, Obfvious is *not* implemented as a pass, but instead coded as an integral part of CLang. To the best of my knowledge, you can’t at this point create an out-of-source LLVM pass on windows.
-* You cannot cross compile (you can’t build a Windows clang on a non-Win machine)
-
-## Obfvious on \*nix systems
-There is nothing preventing Obfvious from working on Linux and Mac distributions. It should work just fine, I just didn't get around to testing it. 
-
 ## Status & Contributing
 
 Obfvious is in a very initial state, and only allows for basic string obfuscation through RORing with a random value. Decoding is done JIT-style by allocating a string for each usage and decoding the obfuscated string to it (and then reading it).
@@ -57,6 +50,13 @@ A list of interesting transformation I hope to explore and perhaps implement:
 
 The code for Obfvious was added under the `CodeGen` module and is located in files
 `clang/lib/CodeGen/ObfviousObfuscator.{h, cpp}`
+
+## Notes
+* As opposed to many tools build upon LLVM, Obfvious is *not* implemented as a pass, but instead coded as an integral part of CLang. To the best of my knowledge, you can’t at this point create an out-of-source LLVM pass on windows.
+* You cannot cross compile (you can’t build a Windows clang on a non-Win machine)
+
+## Obfvious on \*nix systems
+There is nothing preventing Obfvious from working on Linux and Mac distributions. It should work just fine, I just didn't get around to testing it. 
 
 ## Resources
 * [LLVM for Grad Students](http://www.cs.cornell.edu/~asampson/blog/llvm.html)
