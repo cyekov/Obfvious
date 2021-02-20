@@ -38,7 +38,7 @@ I open sourced Obfvious as a tool for other researchers interested in binary and
 * You cannot cross compile (you can’t build a Windows clang on a non-Win machine)
 
 ## Obfvious on \*nix systems
-There is nothing preventing Obfvious from working on Linux and Mac distributions. It shoudl work just fine, I just didn't get around to testing it. 
+There is nothing preventing Obfvious from working on Linux and Mac distributions. It should work just fine, I just didn't get around to testing it. 
 
 ## Status & Contributing
 
