@@ -1,14 +1,14 @@
-//===--- ShadowObfuscator.h - Per-Module Obfuscation ------------*- C++ -*-===//
+//===--- ObfviousObfuscator.h - Per-Module Obfuscation ------------*- C++ -*-===//
 //
 //  Written by github.com/nimrodpar
 //
 //===----------------------------------------------------------------------===//
 //
-// Shadow compiler obfuscations.
+// Obfvious compiler obfuscations.
 //
 //===----------------------------------------------------------------------===//
 
-#include "ShadowObfuscator.h"
+#include "ObfviousObfuscator.h"
 #include "CodeGenModule.h"
 
 #define VERBOSE 0
@@ -17,14 +17,14 @@ using namespace llvm;
 using namespace clang;
 using namespace CodeGen;
 
-void ShadowObfuscator::Obfuscate() {
+void ObfviousObfuscator::Obfuscate() {
   // vector<GlobalString*> GlobalStrings;
   for (llvm::GlobalVariable &Glob : TheModule.globals()) {
     DoGlobalString(Glob);
   }
 }
 
-Constant *ShadowObfuscator::EncodeString(StringRef StrVal) {
+Constant *ObfviousObfuscator::EncodeString(StringRef StrVal) {
 
   const char *Data = StrVal.begin();
   auto Size = StrVal.size();
@@ -45,7 +45,7 @@ Constant *ShadowObfuscator::EncodeString(StringRef StrVal) {
   return NewConst;
 }
 
-void ShadowObfuscator::AddGEPOpDecodeLogicForUser(GEPOperator *GEPOp, User *U) {
+void ObfviousObfuscator::AddGEPOpDecodeLogicForUser(GEPOperator *GEPOp, User *U) {
   Instruction *Inst = dyn_cast<Instruction>(U);
 
 #if VERBOSE
@@ -165,7 +165,7 @@ void ShadowObfuscator::AddGEPOpDecodeLogicForUser(GEPOperator *GEPOp, User *U) {
   valuePhi->addIncoming(value0, BEntry);
 }
 
-void ShadowObfuscator::DoGlobalString(GlobalVariable &Glob) {
+void ObfviousObfuscator::DoGlobalString(GlobalVariable &Glob) {
 
   if (!Glob.hasInitializer() || Glob.hasExternalLinkage())
     return;

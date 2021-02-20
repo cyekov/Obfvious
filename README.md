@@ -1,14 +1,18 @@
-# Shadow
+# Obfvious
 
-Shadow is a LLVM & CLang (version 12) based compiler that allows for Windows binaries obfuscation.
+Obfvious is a LLVM & CLang (version 12) based compiler that allows for Windows binaries obfuscation.
 
-Shadow is currently implemented as an integral part of CLang and is invoked automatically as part of the compilation with `clang.exe`.
+Obfvious is currently implemented as an integral part of CLang and is invoked automatically as part of the compilation with `clang.exe`.
+
+**Test Pass Status:**
+- `check-llvm`: 37990 Passed, 305 Failed
+- `clang-test`: 26049 Passed, 387 Failed
 
 ## Why?
 
-Shadow was incepted during my [research on executable similarity](https://nimrodpar.github.io/posts/firmup-paper/). I was contemplating using the technique for malware similarity, and wanted to examin how reliant are static AV engines (exposed through VirusTotal (TM)) on meta data such as hard-coded strings and debug info.
+Obfvious was incepted during my [research on executable similarity](https://nimrodpar.github.io/posts/firmup-paper/). I was contemplating using the technique for malware similarity, and wanted to examin how reliant are static AV engines (exposed through VirusTotal (TM)) on meta data such as hard-coded strings and debug info.
 
-I open sourced Shadow as a tool for other researchers interested in binary and malware analysis.
+I open sourced Obfvious as a tool for other researchers interested in binary and malware analysis.
 
 ## Compiling on Win 10
 
@@ -19,7 +23,7 @@ I open sourced Shadow as a tool for other researchers interested in binary and m
     * [Unchecked] You can install deps using Chocolatey:
         * Install choco from powershell: `iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))`
         * `choco install cmake git python3 --installargs '"ADD_CMAKE_TO_PATH=System"'` (You may still need to add them it manually to PATH)
-* Clone the Shadow repo `git clone --config core.autocrlf=false https://github.com/nimrodpar/Shadow.git`
+* Clone the Obfvious repo `git clone --config core.autocrlf=false https://github.com/nimrodpar/Obfvious.git`
 
 **Build:**
 * Open a `cmd.exe` and run `build.bat`. You can rebuild under the same shell by invoking `ninja clang`
@@ -30,15 +34,15 @@ I open sourced Shadow as a tool for other researchers interested in binary and m
 * Open a `cmd.exe`, run `env.bat`, `cd` into `build` and `ninja check-llvm clang-test`
 
 ## Notes
-* As opposed to many tools build upon LLVM, Shadow is *not* implemented as a pass, but instead coded as an integral part of CLang. To the best of my knowledge, you can’t at this point create an out-of-source LLVM pass on windows.
+* As opposed to many tools build upon LLVM, Obfvious is *not* implemented as a pass, but instead coded as an integral part of CLang. To the best of my knowledge, you can’t at this point create an out-of-source LLVM pass on windows.
 * You cannot cross compile (you can’t build a Windows clang on a non-Win machine)
 
-## Shadow on \*nix systems
-There is nothing preventing Shadow from working on Linux and Mac distributions. It shoudl work just fine, I just didn't get around to testing it. 
+## Obfvious on \*nix systems
+There is nothing preventing Obfvious from working on Linux and Mac distributions. It shoudl work just fine, I just didn't get around to testing it. 
 
 ## Status & Contributing
 
-Shadow is in a very initial state, and only allows for basic string obfuscation through RORing with a random value. Decoding is done JIT-style by allocating a string for each usage and decoding the obfuscated string to it (and then reading it).
+Obfvious is in a very initial state, and only allows for basic string obfuscation through RORing with a random value. Decoding is done JIT-style by allocating a string for each usage and decoding the obfuscated string to it (and then reading it).
 
 Although being a trivial transformation, I have yet to find a decent open source tool for doing this. Furthermore, the string transformation seems to be enough to avoid static detection of malware (TODO: cite).
 
@@ -51,8 +55,8 @@ A list of interesting transformation I hope to explore and perhaps implement:
 
 **You are very much encouraged to suggest and implement any and all features through issues / pull requests**
 
-The code for Shadow was added under the `CodeGen` module and is located in files
-`clang/lib/CodeGen/ShadowObfuscator.{h, cpp}`
+The code for Obfvious was added under the `CodeGen` module and is located in files
+`clang/lib/CodeGen/ObfviousObfuscator.{h, cpp}`
 
 ## Resources
 * [LLVM for Grad Students](http://www.cs.cornell.edu/~asampson/blog/llvm.html)

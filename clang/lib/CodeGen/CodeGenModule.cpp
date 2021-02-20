@@ -26,7 +26,7 @@
 #include "ConstantEmitter.h"
 #include "CoverageMappingGen.h"
 #include "TargetInfo.h"
-#include "ShadowObfuscator.h"
+#include "ObfviousObfuscator.h"
 #include "clang/AST/ASTContext.h"
 #include "clang/AST/CharUnits.h"
 #include "clang/AST/DeclCXX.h"
@@ -411,8 +411,8 @@ void InstrProfStats::reportDiagnostics(DiagnosticsEngine &Diags,
 
 void CodeGenModule::Release() {
   // Obfuscate the module just before releasing
-  ShadowObfuscator SO(TheModule);
-  SO.Obfuscate();
+  ObfviousObfuscator OO(TheModule);
+  OO.Obfuscate();
 
   EmitDeferred();
   EmitVTablesOpportunistically();

@@ -1,15 +1,15 @@
-//===--- ShadowObfuscator.h - Per-Module Obfuscation ------------*- C++ -*-===//
+//===--- ObfviousObfuscator.h - Per-Module Obfuscation ------------*- C++ -*-===//
 //
 //  Written by github.com/nimrodpar
 //
 //===----------------------------------------------------------------------===//
 //
-// Header for the Shadow compiler obfuscations.
+// Header for the Obfvious compiler obfuscations.
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef SHADOW_OBFUSCATOR_H
-#define SHADOW_OBFUSCATOR_H
+#ifndef OBFVIOUS_OBFUSCATOR_H
+#define OBFVIOUS_OBFUSCATOR_H
 
 #include "llvm/IR/Module.h"
 #include "llvm/IR/Constant.h"
@@ -21,7 +21,7 @@ namespace clang {
 
 namespace CodeGen {
 
-class ShadowObfuscator {
+class ObfviousObfuscator {
 
 private:
 
@@ -33,7 +33,7 @@ private:
     void AddGEPOpDecodeLogicForUser(llvm::GEPOperator *GEPOp, llvm::User *U);
 
 public:
-    ShadowObfuscator(llvm::Module &M) : TheModule(M) {
+    ObfviousObfuscator(llvm::Module &M) : TheModule(M) {
       srand(time(0));
       Seed = (unsigned char)rand();
     }
@@ -46,4 +46,4 @@ public:
 }  // end namespace clang
 
 
-#endif //SHADOW_OBFUSCATOR_H
+#endif //OBFVIOUS_OBFUSCATOR_H
