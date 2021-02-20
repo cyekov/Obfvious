@@ -51,6 +51,8 @@ A list of interesting transformation I hope to explore and perhaps implement:
 The code for Obfvious was added under the `CodeGen` module and is located in files
 `clang/lib/CodeGen/ObfviousObfuscator.{h, cpp}`
 
+**License**: Same as LLVM.
+
 ## Notes
 * As opposed to many tools build upon LLVM, Obfvious is *not* implemented as a pass, but instead coded as an integral part of CLang. To the best of my knowledge, you can’t at this point create an out-of-source LLVM pass on windows.
 * You cannot cross compile (you can’t build a Windows clang on a non-Win machine)
